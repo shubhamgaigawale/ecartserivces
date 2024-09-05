@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: "gatewayserver"
+  config:
+    import: "optional:configserver:http://localhost:8071/"
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lowerCaseServiceId: true
+      httpclient:
+        connect-timeout: 7000
+        response-timeout: 4000
+        
+server:
+  port: 8072
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: "http://localhost:8070/eureka/"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    gateway:
+      enabled: true
+  info:
+    env:
+      enabled: true
+
+
+jwt:
+  secret: z6lmM2dDb1Vp0D4m9kN3/oW4g6+8J9C72gH8jJH+k2O+4Vmyv8lRekNl1r51wqD5J6+IzZs7fK8rA0s5c2TSQ==
+

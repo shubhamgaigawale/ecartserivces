@@ -1,0 +1,48 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: "authservice"
+  mail:
+    host: sandbox.smtp.mailtrap.io
+    port: 2525
+    username: ec4a1550bfed2c
+    password: 88cceb2d296557
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/userauth
+    username: postgres
+    password: monkdevs
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+# JWT Configuration
+app:
+  jwt:
+    secret-key: z6lmM2dDb1Vp0D4m9kN3/oW4g6+8J9C72gH8jJH+k2O+4Vmyv8lRekNl1r51wqD5J6+IzZs7fK8rA0s5c2TSQ==
+    expirationMs: 86400000 # 1 day in milliseconds
+
+eureka:
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+
+
+
+
+
