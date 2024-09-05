@@ -27,14 +27,6 @@ eureka:
       defaultZone: http://localhost:8070/eureka/
 
 
-cloud:
-  aws:
-    credentials:
-      accessKey: AKIAXPTPT23Q7FGDTQHT
-      secretKey: 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
-    region:
-      static: ap-south-1
-
 
 
 
